@@ -6,7 +6,7 @@ import { auth, loginWithGoogle, logout, registerWithEmail, loginWithEmail, db } 
 import { onAuthStateChanged } from 'firebase/auth';
 import { collection, addDoc, query, where, getDocs, orderBy, serverTimestamp, deleteDoc, doc } from 'firebase/firestore';
 
-const API_BASE = "http://localhost:8000";
+const API_BASE = "https://docusenseai-api.onrender.com/";
 
 // --- Extracted Sections ---
 
