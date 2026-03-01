@@ -6,7 +6,7 @@ import { auth, loginWithGoogle, logout, registerWithEmail, loginWithEmail, db } 
 import { onAuthStateChanged } from 'firebase/auth';
 import { collection, addDoc, query, where, getDocs, orderBy, serverTimestamp, deleteDoc, doc } from 'firebase/firestore';
 
-const API_BASE = "https://docusenseai-api.onrender.com/";
+const API_BASE = "https://docusenseai-api.onrender.com";
 
 // --- Extracted Sections ---
 
@@ -883,8 +883,10 @@ function MainApp({ user }) {
                             <AnimatePresence>
                                 {results && !loading && (
                                     <motion.div
+                                        key="results-pane"
                                         initial={{ opacity: 0, scale: 0.98 }}
                                         animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 0.98 }}
                                         className="space-y-8 flex-1 overflow-auto"
                                     >
                                         {/* Summary */}
